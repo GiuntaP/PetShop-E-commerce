@@ -1,0 +1,129 @@
+h3, h1, p{
+    margin: 20px 0;
+  }
+
+button{
+    background-color: #ee6130;
+    color: white;
+    padding: 5px 10px;
+    border: unset;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav {
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos */
+    background-color: #1b3039;
+    height: 70px;
+    width: 100%;
+}
+
+.enlace{
+    position: absolute;
+    padding: 15px 50px;
+}
+.logo{
+    height: 50px;
+}
+
+.logo-carrito{
+    height: 35px;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color:#fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+#cuenta-carrito {
+    background-color: var(--color-acento);
+    border-radius: 100%;
+    display: inline-block; /*se define un inline-block para poder darle un ancho y alto*/
+    height: 20px;
+    line-height: 20px;
+    aspect-ratio: 1;
+    text-align: center;
+}
+
+
+li a.active, li a:hover:not(#cart:hover){
+    background-color: #ee6130;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+.escondido{
+    display: none;
+  }
+
+@media (max-width: 1160px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    .content-banner{
+        max-width: 45rem;
+        margin: 0 auto;
+        padding: 10rem 0;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #1b3039;
+        top: 70px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: #ee6130;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .content-banner{
+        max-width: 20rem;
+        margin: 0 auto;
+        padding: 5rem 0;
+    }
+}

@@ -1,0 +1,226 @@
+:root{
+    --color-acento: #ee6130;
+    --color-acento-claro: #ee613033;
+    --color-texto: black;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Asegúrate de que el cuerpo ocupe toda la altura de la ventana */
+}
+
+body {
+    display: flex; /* Hacer el body un contenedor flex */
+    flex-direction: column; /* Colocar los elementos en columna */
+}
+
+h3, h1, p{
+    margin: 20px 0;
+  }
+
+button{
+    background-color: #ee6130;
+    color: white;
+    padding: 5px 10px;
+    border: unset;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav {
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Espacia los elementos */
+    background-color: #1b3039;
+    height: 70px;
+    width: 100%;
+}
+
+.enlace{
+    position: absolute;
+    padding: 15px 50px;
+}
+.logo{
+    height: 48px;
+}
+
+.logo-carrito{
+    height: 35px;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color:#fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+#cuenta-carrito {
+    background-color: var(--color-acento);
+    border-radius: 100%;
+    display: inline-block; /*se define un inline-block para poder darle un ancho y alto*/
+    height: 20px;
+    line-height: 20px;
+    aspect-ratio: 1;
+    text-align: center;
+}
+
+
+li a.active, li a:hover:not(#cart:hover){
+    background-color: #ee6130;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+/*separacion
+section{
+    background: url(./img/caitlyn_splash.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+}
+*/
+.banner{
+    background-image: linear-gradient(100deg, #000000, #00000020), url(./img/masc.jpg);
+    height: 30rem;
+    background-size: cover;
+    background-position: center center;
+}
+.content-banner{
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 9rem 0;
+}
+.content-banner p{
+    color: var(--color-acento);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.content-banner h2{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.1;
+}
+.content-banner a{
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--color-acento);
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border-radius: 3rem;
+}
+
+#productos-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.producto {
+    flex: 1 1 200px; /* Ajusta el ancho según sea necesario */
+    border: 1px solid #ccc; /* Opcional */
+    padding: 5px; /* Espacio interno */
+    text-align: center; /* Centrar contenido */
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+footer {
+    height: 15%;
+    color: #fff;
+    background-color: #1b3039;
+    text-align: center;
+    margin-top: auto; /* Asegura que el footer se coloque al final */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.4);
+    padding: 10px; /* Añade un poco de padding si lo deseas */
+}
+.escondido{
+    display: none;
+  }
+
+@media (max-width: 1160px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    .content-banner{
+        max-width: 45rem;
+        margin: 0 auto;
+        padding: 10rem 0;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #1b3039;
+        top: 70px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: #ee6130;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .content-banner{
+        max-width: 20rem;
+        margin: 0 auto;
+        padding: 5rem 0;
+    }
+}

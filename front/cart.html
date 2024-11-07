@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b89a1390a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://sdk.mercadopago.com/js/v2">
+    </script>
+    <script src="./js/cart.js" defer></script>
+    <script src="./js/cartService.js" defer></script>
+    <title>PetShop</title>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <a href="./index.html" class="enlace">
+            <img src="./img/logo.png" alt="" class="logo">
+        </a>
+        <ul>
+            <li><a class="active" href="./index.html">Inicio</a></li>
+            <li><a href="./nosotros.html">Nosotros</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+            <li><a href="./cart.html" id="cart"><img src="./img/iconos/carrito.png" alt="carrito"
+                        class="logo-carrito"><span id="cuenta-carrito">0</span></a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <p id="carrito-vacio" class="escondido">Ups! No hay productos <a href="./index.html">Agrega algunos</a></p>
+        <section id="productos-container"></section>
+        <section id="totales" class="escondido">
+            <p>Total unidades: <span id="unidades">0</span></p>
+            <p>Total precio: $<span id="precio">0</span></p>
+            <button id="comprar">Comprar</button>
+            <button id="reiniciar">Reiniciar carrito</button>
+            <div id="wallet_container"></div>
+
+        </section>
+    </main>
+    <footer>
+        <p>Proyecto E-commerce</p>
+        <p>@</p>
+    </footer>
+
+    <script>
+        // Llama a la función para inicializar el carrito al cargar la página
+        window.onload = () => {
+            crearTarjetasProductosInicio();
+            actualizarTotales();
+        };
+    </script>
+</body>
+
+</html>
